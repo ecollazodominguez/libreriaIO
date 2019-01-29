@@ -40,7 +40,7 @@ public class IO {
      * queramos que se muestre el método
      * @param intFloat Introducimos Int o Float dependiendo del número que
      * queramos
-     * @return devuelve el número int indicado
+     * @return devuelve el número int introducido
      */
     public static float introducir(int conVen, int intFloat) {
         Scanner ler = new Scanner(System.in);
