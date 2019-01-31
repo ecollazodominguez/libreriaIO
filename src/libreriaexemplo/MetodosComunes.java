@@ -9,6 +9,7 @@ package libreriaexemplo;
  *
  * @author ecollazodominguez
  */
-public class test {
-    
+public interface MetodosComunes {
+     public void imprimir(float numero);
+     public void imprimir(int numero);
 }

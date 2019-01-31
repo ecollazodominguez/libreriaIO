@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author ecollazodominguez
  */
-public class IO {
+public class IO implements MetodosComunes {
 
     /**
      * Variable para indicar que será por consola
@@ -34,6 +34,10 @@ public class IO {
      */
     public final static int FLOAT = 4;
 
+    enum Tipo {
+        CONSOLA,
+        VENTANA
+    }
     /**
      * Método para introducir un número mediante teclado, int o float y se devuelva
      * @param conVen Introducimos Consola o Ventana dependiendo de donde
@@ -179,25 +183,32 @@ public class IO {
         return numero;
     }
 
+    static public IO crearIO(Tipo tipo) {
+        IO IOCreado;
+        switch (tipo) {
+            // creamos un dialogo de consola
+            case CONSOLA:
+                IOCreado = new ConsIO();
+                break;
+            // creamos un dialogo de ventana
+            case VENTANA:
+                IOCreado = new WinIO();
+                break;
+            default:
+                IOCreado = null;
+        }
+        
+        return IOCreado;
+
+    }
     /**
      * Muestra en consola o ventana el número int almacenado en la variable.
      * @param numero Escribimos la variable donde se contiene el número int que
      * queremos que se muestre
      * @param ConVen Indicamos si lo hacemos por Consola o Ventana
      */
-    public static void imprimir(int numero, int ConVen) {
-
-        switch (ConVen) {
-            case CONSOLA:
-                System.out.println(numero);
-                break;
-            case VENTANA:
-                JOptionPane.showMessageDialog(null, numero);
-                break;
-            default:
-                JOptionPane.showMessageDialog(null,"Error. Elige CONSOLA o VENTANA");
+    public void imprimir(int numero) {
         }
-    }
 
     /**
      *Muestra en consola o ventana el número float almacenado en la variable.
@@ -205,17 +216,7 @@ public class IO {
      * que queremos que se muestre
      * @param ConVen Indicamos si lo hacemos por Consola o Ventana
      */
-    public static void imprimir(float numero, int ConVen) {
 
-        switch (ConVen) {
-            case CONSOLA:
-                System.out.println(numero);
-                break;
-            case VENTANA:
-                JOptionPane.showMessageDialog(null, numero);
-                break;
-            default:
-                JOptionPane.showMessageDialog(null,"Error. Elige CONSOLA o VENTANA");
-        }
+    public void imprimir(float numero) {
     }
 }
