@@ -205,8 +205,8 @@ public class IO implements MetodosComunes {
      * Muestra en consola o ventana el número int almacenado en la variable.
      * @param numero Escribimos la variable donde se contiene el número int que
      * queremos que se muestre
-     * @param ConVen Indicamos si lo hacemos por Consola o Ventana
      */
+    @Override
     public void imprimir(int numero) {
         }
 
@@ -214,9 +214,9 @@ public class IO implements MetodosComunes {
      *Muestra en consola o ventana el número float almacenado en la variable.
      * @param numero Escribimos la variable donde contiene el número float
      * que queremos que se muestre
-     * @param ConVen Indicamos si lo hacemos por Consola o Ventana
      */
 
+    @Override
     public void imprimir(float numero) {
     }
 }
